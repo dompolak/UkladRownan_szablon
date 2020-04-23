@@ -178,7 +178,7 @@ std::istream &operator >> (std::istream &wejscie, LZespolona &Sk1)
 *   Pierwsza liczba jest najpierw pomnozona przez sprzeznie drugiej liczby
 *     a nastepnie podzielona przez modul 2 liczby zespolonej
 */
- LZespolona LZespolona::operator / (LZespolona Sk2) const
+ LZespolona LZespolona::operator / (const LZespolona &Sk2) const
  {
     LZespolona wynik;
     wynik = (*this * Sk2.sprzezenie()) / (Sk2.modul() * Sk2.modul());
@@ -250,3 +250,8 @@ bool LZespolona::operator != (const LZespolona &Sk1) const
      wynik.im = this->im * -1;
      return wynik;
  }
+
+void LZespolona::sprzezenie()
+{
+    this->im *= -1;
+}
