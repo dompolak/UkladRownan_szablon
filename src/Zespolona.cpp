@@ -1,24 +1,5 @@
 #include "Zespolona.hh"
 
-LZespolona::LZespolona()
-{
-    this->re = 0;
-    this->im = 0;
-}
-
-LZespolona::~LZespolona()
-{
-
-}
-LZespolona::LZespolona(double re, double im)
-{
-    this->re = re;
-    this->im = im;
-}
-/*
-* Funckje przy pomocy ktorych ustawiamy wartosc czesci rzeczywistej oraz urojonej liczby zespolonej
-*/
-
 void LZespolona::set_re (double re)
 {
     this->re = re;
@@ -42,6 +23,13 @@ double LZespolona::get_im() const
     return this->im;
 }
 
+LZespolona &LZespolona::operator = (const LZespolona &Sk1)
+{
+    this->re = Sk1.re;
+    this->im = Sk1.im;
+
+    return *this;
+}
 /*
 *   Funkcja realizuje wyswietlenie liczbe zespolonej
 */

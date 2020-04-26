@@ -17,13 +17,15 @@ class LZespolona
     double re;
     double im;
 public:
-    LZespolona();
-    explicit LZespolona(double, double);
-    ~LZespolona();
+    //LZespolona(): re(0), im(0){};
+    explicit LZespolona(double re1 = 0, double im1 = 0) : 
+        re(re1)
+        , im(im1){};
     void set_re(double);
     void set_im(double);
     double get_re() const;
     double get_im() const;
+    LZespolona &operator = (const LZespolona &Sk1);
     LZespolona operator + (const LZespolona &Sk1) const;
     LZespolona operator - (const LZespolona &Sk1) const;
     LZespolona operator * (const LZespolona &Sk1) const;
