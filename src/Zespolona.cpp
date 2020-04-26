@@ -30,6 +30,12 @@ LZespolona &LZespolona::operator = (const LZespolona &Sk1)
 
     return *this;
 }
+
+LZespolona &LZespolona::operator = (const double & liczba)
+{
+    this->re = liczba; this->im = 0;
+    return *this;
+}
 /*
 *   Funkcja realizuje wyswietlenie liczbe zespolonej
 */
@@ -158,6 +164,13 @@ std::istream &operator >> (std::istream &wejscie, LZespolona &Sk1)
      return wynik;
  }
 
+LZespolona LZespolona::operator * (const double &liczba) const
+{
+     LZespolona wynik;
+     wynik.re *= liczba;
+     wynik.im *= liczba;
+     return wynik;
+}
 /*
 *   Funckja realizuje dzielenie liczby zespolonej 
 *   przyjmuje jako argumenty 2 rozne liczby zespolone 
@@ -211,6 +224,14 @@ std::istream &operator >> (std::istream &wejscie, LZespolona &Sk1)
        }
         return false;
  }
+
+bool LZespolona::operator == (const double &liczba) const
+{
+    if(fabs(this->re - liczba) <= FLT_EPSILON)
+    {return true;}
+
+    return false;
+}
 
 bool LZespolona::operator != (const LZespolona &Sk1) const
 {

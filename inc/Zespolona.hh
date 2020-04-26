@@ -3,7 +3,7 @@
 
 #include<iostream>
 #include<string>
-#include<math.h>
+#include<cmath>
 #include<cstring>
 #include<fstream>
 #include<cfloat>
@@ -26,12 +26,15 @@ public:
     double get_re() const;
     double get_im() const;
     LZespolona &operator = (const LZespolona &Sk1);
+    LZespolona &operator = (const double &);
     LZespolona operator + (const LZespolona &Sk1) const;
     LZespolona operator - (const LZespolona &Sk1) const;
     LZespolona operator * (const LZespolona &Sk1) const;
+    LZespolona operator * (const double &) const;
     LZespolona operator / (const LZespolona &) const;
     LZespolona operator / (const double &liczba) const;
     bool operator == (const LZespolona &Sk1) const;
+    bool operator == (const double &) const;
     bool operator != (const LZespolona &Sk1) const;
     double modul() const;
     LZespolona sprzezenie() const;
