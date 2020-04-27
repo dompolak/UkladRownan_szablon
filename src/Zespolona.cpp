@@ -225,14 +225,6 @@ LZespolona LZespolona::operator * (const double &liczba) const
         return false;
  }
 
-bool LZespolona::operator == (const double &liczba) const
-{
-    if(fabs(this->re - liczba) <= FLT_EPSILON)
-    {return true;}
-
-    return false;
-}
-
 bool LZespolona::operator != (const LZespolona &Sk1) const
 {
     return (!(*this == Sk1));

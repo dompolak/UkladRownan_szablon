@@ -34,7 +34,6 @@ public:
     LZespolona operator / (const LZespolona &) const;
     LZespolona operator / (const double &liczba) const;
     bool operator == (const LZespolona &Sk1) const;
-    bool operator == (const double &) const;
     bool operator != (const LZespolona &Sk1) const;
     double modul() const;
     LZespolona sprzezenie() const;
