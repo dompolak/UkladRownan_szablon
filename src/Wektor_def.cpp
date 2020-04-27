@@ -82,7 +82,9 @@ template<class T, int size>
 Wektor<T,size> Wektor<T,size>::operator / (const T &liczba) const
 {
     Wektor<T,size> wynik;
-    if(liczba == 0)
+    T rowna;
+    rowna = 0;
+    if(liczba == rowna)
     {
         std::cerr << "Dzielenie przez zero!" << std::endl;
         exit(1);
