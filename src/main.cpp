@@ -4,7 +4,7 @@ int main()
 {   
     Wektor<LZespolona, ROZMIAR> jeden, dwa;
     Wektor<double, ROZMIAR> jeden1, dwa1;
-    LZespolona zesp(2);
+    LZespolona zesp(2,0);
     
     std::cin >> jeden >> dwa;
     std::cin >> jeden1 >> dwa1;
