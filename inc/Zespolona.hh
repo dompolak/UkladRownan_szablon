@@ -17,8 +17,8 @@ class LZespolona
     double re;
     double im;
 public:
-    LZespolona(): re(0), im(0){};
-    explicit LZespolona(double re1, double im1) : 
+    //LZespolona(): re(0), im(0){};
+    explicit LZespolona(double re1 = 0, double im1 = 0) : 
         re(re1)
         , im(im1){};
     void set_re(double);
