@@ -58,8 +58,7 @@ Wektor<T,size> Wektor<T,size>::operator - (const Wektor<T,size> &Arg1) const
 template<class T, int size>
 T Wektor<T,size>::operator * (const Wektor<T,size> &Arg1) const
 {
-    T wynik;
-    wynik = 0;
+    T wynik(0.0);
     for(int i(0); i < ROZMIAR; i++)
     {
         wynik = wynik + (this->tab[i] * Arg1[i]);
@@ -82,8 +81,7 @@ template<class T, int size>
 Wektor<T,size> Wektor<T,size>::operator / (const T &liczba) const
 {
     Wektor<T,size> wynik;
-    T rowna;
-    rowna = 0;
+    T rowna(0.0);
     if(liczba == rowna)
     {
         std::cerr << "Dzielenie przez zero!" << std::endl;
