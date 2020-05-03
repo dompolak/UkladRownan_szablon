@@ -139,3 +139,20 @@ std::istream &operator >> (std::istream &strm, Wektor<T,size> &Arg1)
 
     return strm;
 }
+
+template<class T, int size>
+double Wektor<T, size>::dlugosc() const
+{
+    return sqrt((*this) * (*this));
+}
+
+template<> 
+double Wektor<LZespolona, ROZMIAR>::dlugosc() const
+{
+    Wektor<LZespolona, ROZMIAR> tmp(*this);
+    for(int i(0); i < ROZMIAR; i++)
+    {tmp[i].sprzezenie(); }
+    LZespolona tmp1;
+    tmp1 = (*this) * tmp;
+    return sqrt(tmp1.get_re());
+}

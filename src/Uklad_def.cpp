@@ -105,14 +105,9 @@ Wektor<T, size>  uklad_rownan<T, size> ::Oblicz() const
     return tmp2;
 }
 
-/*template<class T, int size>
-Wektor<T, size> uklad_rownan<T, size>::wektor_bledu(const Wektor <T, size> &wynik) const 
-{   
-    return this->arg1 * wynik - this->arg2;
-}*/
-
 template<class T, int size>
 Wektor<T, size> wektor_bledu(const uklad_rownan<T, size> &uklad, const Wektor<T, size> &wynik)
 {
     return uklad.get_arg1() * wynik - uklad.get_arg2();
 }
+

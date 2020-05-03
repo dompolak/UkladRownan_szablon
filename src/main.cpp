@@ -2,11 +2,12 @@
 
 int main()
 {   
-    /*uklad_rownan<double, ROZMIAR> uklad;
-    Wektor<double, ROZMIAR> we_wynikow, we_bledu;
+   uklad_rownan<LZespolona, ROZMIAR> uklad;
+    Wektor<LZespolona, ROZMIAR> we_wynikow, we_bledu;
 
 std::cin >> uklad;
-std::cout << uklad << std::endl << std::endl;
+std::cout << std::fixed << std::setprecision(2) 
+          << uklad << std::endl << std::endl;
 
 try
 {
@@ -27,19 +28,10 @@ catch(std::string wyjatek)
         std::cout << "uklad sprzeczny albo nieoznaczony" << std::endl;
     }    
 }
-
+we_bledu = wektor_bledu(uklad, we_wynikow);
 std::cout  << "Wektor bledu: ( " 
-           //<< std::scientific << std::setprecision(1) 
-           << wektor_bledu(uklad, we_wynikow) << " )" << std::endl;
+           << std::scientific << std::setprecision(1) 
+           << we_bledu << " )" << std::endl;
 
-we_bledu = uklad.get_arg1() * uklad.get_arg2() - we_wynikow;
-std::cout << we_wynikow << std::endl;
-std::cout << we_bledu << std::endl;*/
-macierz<double, ROZMIAR> tmp;
-for(;;)
-{
-    std::cin >> tmp;
-    std::cout << tmp.wyznacznik() << std::endl;
-}
-
+std::cout << "Dlugosc wektora bledu: " << we_bledu.dlugosc() << std::endl;
 }

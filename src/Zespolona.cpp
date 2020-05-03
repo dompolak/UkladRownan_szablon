@@ -243,14 +243,12 @@ bool LZespolona::operator != (const LZespolona &Sk1) const
 *   Funckja, wykonujaca sprzezenie liczby zespolonej, ktora zwraca
 *   liczbe zespolona ze zmianionym znakiem przy czesci urojonej
 */
-
- LZespolona LZespolona::sprzezenie() const
- {
-     LZespolona wynik;
-     wynik.re = this->re;
-     wynik.im = this->im * -1;
-     return wynik;
- }
+LZespolona LZespolona::sprzezenie() const
+{
+    LZespolona tmp(*this);
+    tmp.im *= -1;
+    return tmp;
+}
 
 void LZespolona::sprzezenie()
 {

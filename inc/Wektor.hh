@@ -20,7 +20,7 @@ public:
     Wektor<T, size> operator / (const T &) const;
     bool operator == (const Wektor<T, size> &) const;
     bool operator != (const Wektor<T, size> &) const; 
-
+    double dlugosc() const;
 };
 
 template<class T, int size>

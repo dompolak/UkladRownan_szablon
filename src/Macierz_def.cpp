@@ -171,8 +171,12 @@ std::istream &operator >> (std::istream &strm, macierz<T, size> &Arg1)
 template<class T, int size>
 T macierz<T, size>::wyznacznik() const
 {   
-    macierz<T, size> lower, upper;
+    macierz<T, size> lower, upper, tmp(*this);
     T porw(0.0);
+
+    if(tmp[0][0] == porw)
+    {return porw; }
+
     for (int i = 0; i < size; i++) 
     { 
         for (int k = i; k < size; k++)
@@ -181,9 +185,11 @@ T macierz<T, size>::wyznacznik() const
             for (int j = 0; j < i; j++) 
                 liczba = liczba + (lower[i][j] * upper[j][k]); 
 
-            upper[i][k] = tab[i][k] - liczba; 
+            upper[i][k] = tmp[i][k] - liczba; 
         }       
- 
+        
+        if(upper[i][i] == porw)
+        {return porw; }
         for (int k = i; k < size; k++) 
         { 
             if (i == k) 
@@ -194,10 +200,7 @@ T macierz<T, size>::wyznacznik() const
                 for (int j = 0; j < i; j++) 
                     liczba = liczba + (lower[k][j] * upper[j][i]);
 
-                lower[k][i] = (tab[k][i] - liczba) / upper[i][i];
-
-                std::cerr << "Upper"  << std::endl << upper << std::endl;
-                std::cerr << "Lower"  << std::endl << upper << std::endl; 
+                lower[k][i] = (tmp[k][i] - liczba) / upper[i][i]; 
             } 
         } 
     }
@@ -210,4 +213,5 @@ T macierz<T, size>::wyznacznik() const
 
    return liczba;
 }
+
 
