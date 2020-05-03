@@ -120,7 +120,7 @@ std::ostream &operator << (std::ostream &strm, const Wektor<T,size> &Arg1)
 {
     for(int i(0); i < ROZMIAR; i++)
     {
-        strm << Arg1[i];
+        strm <<  Arg1[i];
         if(i != ROZMIAR - 1)
         {
             strm << " ";

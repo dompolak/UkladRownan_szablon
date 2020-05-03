@@ -167,3 +167,47 @@ std::istream &operator >> (std::istream &strm, macierz<T, size> &Arg1)
 
     return strm;
 }
+
+template<class T, int size>
+T macierz<T, size>::wyznacznik() const
+{   
+    macierz<T, size> lower, upper;
+    T porw(0.0);
+    for (int i = 0; i < size; i++) 
+    { 
+        for (int k = i; k < size; k++)
+        { 
+            T liczba(0.0);
+            for (int j = 0; j < i; j++) 
+                liczba = liczba + (lower[i][j] * upper[j][k]); 
+
+            upper[i][k] = tab[i][k] - liczba; 
+        }       
+ 
+        for (int k = i; k < size; k++) 
+        { 
+            if (i == k) 
+                lower[i][i] = 1; 
+            else 
+            { 
+                T liczba(0.0); 
+                for (int j = 0; j < i; j++) 
+                    liczba = liczba + (lower[k][j] * upper[j][i]);
+
+                lower[k][i] = (tab[k][i] - liczba) / upper[i][i];
+
+                std::cerr << "Upper"  << std::endl << upper << std::endl;
+                std::cerr << "Lower"  << std::endl << upper << std::endl; 
+            } 
+        } 
+    }
+
+   T liczba(upper[0][0]);
+   for(int i(1); i < size; i++)
+   {
+      liczba = liczba * upper[i][i];
+   }
+
+   return liczba;
+}
+

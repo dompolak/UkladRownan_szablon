@@ -17,7 +17,7 @@ public:
     macierz<T, size> operator * (const macierz<T, size> &) const;
     macierz<T, size> operator * (const T &) const;
     Wektor<T, size> operator * (const Wektor<T, size> &) const;
-    double wyznacznik() const;
+    T wyznacznik() const;
     macierz<T, size> transponuj() const;
     void transponuj();
 };

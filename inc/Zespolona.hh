@@ -7,6 +7,7 @@
 #include<cstring>
 #include<fstream>
 #include<cfloat>
+#include <iomanip> 
 
 /*
 *   Plik zawieta klase liczba zespolona wraz z metodami tej klasy

@@ -1,39 +1,45 @@
-#include "Wektor.hh"
+#include "Uklad.hh"
 
 int main()
 {   
-    Wektor<LZespolona, ROZMIAR> jeden, dwa;
-    Wektor<double, ROZMIAR> jeden1, dwa1;
-    LZespolona zesp(2,0);
-    
-    std::cin >> jeden >> dwa;
-    std::cin >> jeden1 >> dwa1;
+    /*uklad_rownan<double, ROZMIAR> uklad;
+    Wektor<double, ROZMIAR> we_wynikow, we_bledu;
 
-    std::cout << "--------LZespolona-------" << std::endl;
-    std::cout << jeden << std::endl;
-    std::cout << dwa << std::endl;
-    std::cout << "skalar" << jeden * dwa << std::endl;
-    std::cout << "suma" << jeden + dwa << std::endl;
-    std::cout << "roznica" << jeden - dwa << std::endl;
-    std::cout << "pomnozyc przez" << jeden * zesp << std::endl;
-    std::cout << "podzielic przez" << jeden / zesp << std::endl;
-    if( jeden != dwa)
+std::cin >> uklad;
+std::cout << uklad << std::endl << std::endl;
+
+try
+{
+    we_wynikow = uklad.Oblicz();
+    std::cout << "Rozwiazania:" << std::endl << std::endl;
+    std::cout << std::fixed << std::setprecision(2) 
+              << we_wynikow << std::endl << std::endl;
+
+}
+catch(std::string wyjatek)
+{
+    if(wyjatek == "wyjatek1")
     {
-        std::cout << "Nie sa rowne" << std::endl;
+        std::cout << "uklad sprzeczny" << std::endl;
     }
-
-    std::cout << "--------double-------" << std::endl;
-    std::cout << jeden1 << std::endl;
-    std::cout << dwa1 << std::endl;
-    std::cout << "skalar" << jeden1 * dwa1 << std::endl;
-    std::cout << "suma" << jeden1 + dwa1 << std::endl;
-    std::cout << "roznica" << jeden1 - dwa1 << std::endl;
-    std::cout << "*pomnozyc przez" << jeden1 * 2 << std::endl;
-    std::cout << "podzielic przez" << jeden1 /  2 << std::endl;
-    if( jeden1 != dwa1)
+    if(wyjatek == "wyjatek2")
     {
-        std::cout << "Nie sa rowne" << std::endl;
-    }
+        std::cout << "uklad sprzeczny albo nieoznaczony" << std::endl;
+    }    
+}
 
+std::cout  << "Wektor bledu: ( " 
+           //<< std::scientific << std::setprecision(1) 
+           << wektor_bledu(uklad, we_wynikow) << " )" << std::endl;
+
+we_bledu = uklad.get_arg1() * uklad.get_arg2() - we_wynikow;
+std::cout << we_wynikow << std::endl;
+std::cout << we_bledu << std::endl;*/
+macierz<double, ROZMIAR> tmp;
+for(;;)
+{
+    std::cin >> tmp;
+    std::cout << tmp.wyznacznik() << std::endl;
+}
 
 }
