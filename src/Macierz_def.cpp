@@ -188,7 +188,7 @@ T macierz<T, size>::wyznacznik() const
             upper[i][k] = tmp[i][k] - liczba; 
         }       
         
-        if(upper[i][i] == porw)
+        if(upper[i][i] == porw) //dzielenie przez zero, nie wszystkie wyznaczniki liczy dobrze
         {return porw; }
         for (int k = i; k < size; k++) 
         { 
